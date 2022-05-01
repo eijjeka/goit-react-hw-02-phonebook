@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const List = ({ data, onDeleteContact }) => {
   return (
@@ -69,3 +70,14 @@ const TextList = styled.span`
   display: inline-block;
   margin-top: 10px;
 `;
+
+List.propTypes = {
+  data: PropTypes.array.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+};
+
+Item.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+};

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Container from '../Container';
+import PropTypes from 'prop-types';
 
 const Filter = ({ value, onChange }) => {
   return (
@@ -42,3 +43,8 @@ const Input = styled.input`
   border-radius: 5px;
   opacity: 0.5;
 `;
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
