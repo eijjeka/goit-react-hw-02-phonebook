@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Container from './Container';
 import Form from './Form';
 import List from './ContactsList';
@@ -59,8 +58,3 @@ class App extends Component {
 export default App;
 
 const Title = styled.h1``;
-
-App.propTypes = {
-  contacts: PropTypes.array.isRequired,
-  filter: PropTypes.string.isRequired,
-};

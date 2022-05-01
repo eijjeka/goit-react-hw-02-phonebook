@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { nanoid } from 'nanoid';
 import Input from '../Input';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
 
 class Form extends Component {
   state = {
@@ -11,6 +13,8 @@ class Form extends Component {
   };
 
   handleSubmit = e => {
+    if (this.state.number.length > 13)
+      return alert('Please enter correct phone number');
     e.preventDefault();
     this.props.onSubmit(this.state);
     this.reset();
@@ -44,14 +48,19 @@ class Form extends Component {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           placeholder="Enter please name"
         />
-        <Input
-          onChange={this.handleInputChange}
+        <PhoneInput
+          defaultCountry="UA"
+          onChange={number => this.setState({ number })}
+          region="Europe"
           title="Number"
           type="tel"
           name="number"
           value={this.state.number}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          placeholder="Enter please tel"
+          placeholder="Enter phone number"
+          autoComplete="off"
+          international
+          className="inputPhone"
+          maxLength="16"
         />
         <BtnSubmit onSubmit={this.handleSubmit}>Add contact</BtnSubmit>
       </FormContainer>

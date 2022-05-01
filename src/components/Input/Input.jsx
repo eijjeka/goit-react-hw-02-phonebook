@@ -37,7 +37,7 @@ const Label = styled.h2`
 
 const InputInner = styled.input`
   padding: 5px;
-  width: 200px;
+  width: 228px;
   opacity: 0.5;
   border: none;
   border-radius: 5px;

@@ -75,9 +75,3 @@ List.propTypes = {
   data: PropTypes.array.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
 };
-
-Item.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
-};
