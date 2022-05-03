@@ -72,6 +72,12 @@ const TextList = styled.span`
 `;
 
 List.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }),
+  ),
   onDeleteContact: PropTypes.func.isRequired,
 };
